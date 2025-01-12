@@ -18,7 +18,7 @@ const useClima = () => {
             // Obtenemos la key por variables de entorno
             const key = import.meta.env.VITE_API_KEY;
             // Obtenemos la lat y lng
-            const url = `http://api.openweathermap.org/geo/1.0/direct?q=${busqueda.ciudad},${busqueda.pais}&limit=1&appid=${key}`;
+            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${busqueda.ciudad},${busqueda.pais}&limit=1&appid=${key}`;
             const { data } = await axios(url);
 
             const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&appid=${key}`;
